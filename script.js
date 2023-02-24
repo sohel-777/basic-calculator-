@@ -22,6 +22,10 @@ const dot = document.querySelector("#dot");
 const num0 = document.querySelector("#block0");
 const equalTo = document.querySelector("#ans");
 
+const bracketStart = document.querySelector("#start");
+const bracketEnd = document.querySelector("#end");
+
+
 let str="";
 function dis(){
   displayAns.value=str;
@@ -121,6 +125,25 @@ function dott(){
  dis()
 }
 dot.addEventListener("click" ,dott);
+
+function deletee(){
+  str = str.slice(0,-1);
+ dis()
+}
+back.addEventListener("click" ,deletee);
+
+function bracStarting(){
+  str+=bracketStart.textContent;
+ dis()
+}
+bracketStart.addEventListener("click" ,bracStarting);
+
+function bracEnding(){
+  str+=bracketEnd.textContent;
+ dis()
+}
+bracketEnd.addEventListener("click" ,bracEnding);
+
 
 function result(){
   let str1=eval(str);
